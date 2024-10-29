@@ -9,6 +9,10 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.sans],
+        display: ["Arvo", ...defaultTheme.fontFamily.sans],
+      },
+      spacing: {
+        18: "4.5rem",
       },
     },
   },

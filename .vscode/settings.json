@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    "index.css": "tailwindcss"
+    "index.css": "tailwindcss",
+    "*.tw.css": "tailwindcss"
   }
 }

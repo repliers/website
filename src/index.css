@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Exo 2", sans-serif;
+  }
+}
+
+body {
+  @apply text-zinc-700;
+}
+
+.button {
+  @apply border-2 border-black p-2 md:px-4 bg-black text-white font-medium hover:bg-gray-700 transition-colors duration-300 motion-reduce:transition-none motion-reduce:hover:bg-black rounded uppercase;
+}
+
+.button.xl {
+  @apply px-8 lg:px-14 py-6 text-2xl;
+}
+
+.button.lg {
+  @apply px-6 lg:px-10 py-4 text-xl;
+}

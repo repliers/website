@@ -1,0 +1,79 @@
+.banner {
+  @apply flex flex-col lg:flex-row gap-x-10 gap-y-20 px-5 py-16 2xl:py-32 items-center justify-center;
+}
+
+.banner .description {
+  @apply text-center max-w-screen-sm xl:max-w-screen-md text-lg md:text-xl;
+}
+
+.banner .description h2 {
+  @apply text-3xl md:text-4xl text-black font-extrabold pb-5 font-display;
+}
+
+.banner .illustration {
+  @apply w-60 md:w-96 lg:w-3/6 lg:max-w-screen-sm;
+}
+
+.feature {
+  @apply flex flex-col lg:flex-row justify-center px-5 py-20 2xl:py-32 gap-x-16 xl:gap-x-72 gap-y-20 text-zinc-700 items-center bg-gradient-to-tr from-white to-zinc-200;
+}
+
+.feature .description {
+  @apply max-w-2xl text-center;
+}
+
+.feature .description .points {
+  @apply pt-10 flex flex-col items-start gap-y-3 w-fit mx-auto;
+}
+
+.feature .description h3 {
+  @apply text-3xl font-bold pb-8 text-black font-display;
+}
+
+.feature .illustration {
+  @apply min-w-60 w-full max-w-96;
+}
+
+.feature.reverse {
+  @apply lg:flex-row-reverse bg-gradient-to-tr from-black to-zinc-800 text-zinc-300;
+}
+
+.feature.reverse .description h3 {
+  @apply text-white;
+}
+
+.feature.reverse .description {
+  @apply font-light;
+}
+
+.pricing {
+  @apply flex flex-col items-center justify-center px-5 py-10;
+}
+
+.pricing h3 {
+  @apply text-5xl font-extrabold py-10 text-black;
+}
+
+.pricing p {
+  @apply text-lg mb-3 text-center;
+}
+
+.pricing .price {
+  @apply text-9xl font-black text-black py-8 pb-0 leading-none font-display;
+}
+
+.pricing .price-extra {
+  @apply text-2xl md:text-3xl text-zinc-600 font-bold font-display;
+}
+
+.contact {
+  @apply flex flex-col lg:flex-row items-center bg-black text-zinc-300 max-w-screen-2xl bg-gradient-to-tr from-black to-zinc-600 rounded-lg px-10 py-10 gap-y-10  gap-x-4 my-24 mx-5 2xl:mx-auto font-light;
+}
+
+.contact h3 {
+  @apply text-2xl font-extrabold py-4 text-white font-display;
+}
+
+.contact .illustration {
+  @apply min-w-60;
+}

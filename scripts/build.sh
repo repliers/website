@@ -20,3 +20,4 @@ cp -r "$src_dir"/* "$build_dir"
 echo "Contents of '$src_dir' have been copied to '$build_dir'."
 
 npx tailwindcss -i $SCRIPTPATH/../src/index.css -o $build_dir/index.css
+npx tailwindcss -i $SCRIPTPATH/../src/css/*.tw.css -o $build_dir/css/*
