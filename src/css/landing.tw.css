@@ -59,7 +59,14 @@
 }
 
 .pricing .price {
-  @apply text-9xl font-black text-black py-8 pb-0 leading-none font-display;
+  @apply text-7xl font-black text-black py-8 pb-8 leading-none font-display;
+}
+.pricing .price-cards {
+  @apply flex gap-4 py-5 flex-col lg:flex-row;
+}
+
+.pricing .price-cards .price-card {
+  @apply bg-black text-white py-8 px-12 font-display flex flex-col items-center;
 }
 
 .pricing .price-extra {
