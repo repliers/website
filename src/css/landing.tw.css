@@ -1,21 +1,22 @@
 .hero {
-  @apply w-full flex gap-x-20 py-20 px-10;
+  @apply w-full flex gap-x-20 py-20 px-20 relative justify-around;
+  background: url("assets/solar-system.png");
+  /* background-position: right center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
 }
 
 .hero .left {
-  @apply max-w-screen-md flex flex-col gap-y-5 justify-center;
+  @apply flex flex-col gap-y-5 justify-center max-w-2xl;
 }
 
 .hero .right {
-  @apply flex-1 min-w-96;
+  @apply flex-1 max-w-xl w-full;
 }
 
-.hero .heading-text {
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.43)
-  );
+.heading-text {
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgba(16, 16, 16, 0.43));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -27,16 +28,16 @@
 
 .glass {
   @apply flex items-center justify-center w-full flex-1 flex-col p-5 rounded-xl gap-y-2;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px rgba(255, 255, 255, 0.08) solid;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
 .hero .tabs {
   @apply h-12 rounded-full flex items-center w-full p-1 gap-x-1 mb-2;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px rgba(255, 255, 255, 0.08) solid;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
 }
 
 .hero .tabs .tab-selector {
@@ -44,19 +45,32 @@
 }
 .hero .tabs .tab-selector.active,
 .hero .tabs .tab-selector:hover {
-  background-color: #171719;
+  background-color: var(--dark);
+  color: var(--dark-foreground);
 }
 
 .hero .tabs .tab-selector.active:hover {
-  background-color: #0e0e10;
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
 }
 
 .main-section {
   @apply flex-1 w-full;
 }
 
+.main-section div {
+  @apply relative opacity-100;
+}
+
+.main-section div.active {
+  @apply absolute opacity-0;
+}
+
 .main-section .comments {
-  @apply bg-black rounded-lg w-full flex-1;
+  @apply rounded-lg w-full flex-1;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .comments .comment {
@@ -103,4 +117,30 @@
 
 .comments .comment .tag {
   @apply text-blue-500;
+}
+
+.main-section .messages .message {
+  @apply flex gap-x-2 items-center my-4;
+}
+.main-section .messages .message img {
+  @apply size-8;
+}
+.main-section .messages .message p {
+  @apply px-4 py-2 rounded-lg rounded-bl-none max-w-sm;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.main-section .messages .message.mine {
+  @apply justify-end;
+}
+.main-section .messages .message.mine p {
+  @apply rounded-bl-lg rounded-br-none text-white;
+  background: linear-gradient(90deg, #7342ff, #9047de);
+}
+
+.demo {
+  @apply flex flex-col py-20 px-20 items-center;
+}
+
+.demo .title {
+  @apply flex flex-col max-w-2xl text-center gap-y-5 items-center;
 }

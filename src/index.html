@@ -46,7 +46,7 @@
   </head>
   <body></body>
     <header class="">
-      <a href="/"><img src="logo-banner.png" class="w-32" /></a>
+      <a href="/"><img src="logo-banner.png" class="w-40" /></a>
       <nav>
         <a href="/" class="link">Home</a>
         <a href="/" class="link">About Us</a>
@@ -68,17 +68,17 @@
 
           <div class="glass">
             <div class="tabs">
-              <button class="tab-selector active"><i class="fa-regular fa-comment"></i>Comments</button>
-              <button class="tab-selector"><i class="fa-regular fa-message"></i>Messages</button>
+              <button class="tab-selector messages-tab active"><i class="fa-regular fa-message"></i>Messages</button>
+              <button class="tab-selector comments-tab"><i class="fa-regular fa-comment"></i>Comments</button>
             </div>
             <div class="main-section">
-              <div class="comments">
-                <div class="flex flex-col items-center border-b border-gray-900 py-4">
-                  <div class="bg-white opacity-10 w-48 h-2 rounded-full mb-3"></div>
+              <div class="comments active">
+                <div class="flex flex-col items-center border-b border-gray-200 py-4">
+                  <div class="bg-gray-50 w-48 h-2 rounded-full mb-3"></div>
                   <span>Comments</span>
                 </div>
                 <div class="flex flex-col py-4">
-                  <div class="comment"> <!-- comment 1 -->
+                  <div class="comment">
                     <img class="avatar" src="assets/john-adams.png" />
                     <div class="texts">
                       <div class="name-section">
@@ -93,7 +93,7 @@
                       <span class="text-gray">1.4k</span>
                     </div>
                   </div>
-                  <div class="comment our"> <!-- comment 2 -->
+                  <div class="comment our">
                     <img class="avatar" src="assets/our-own-cafe.png" />
                     <div class="texts">
                       <div class="name-section">
@@ -108,7 +108,7 @@
                       <span class="text-gray">1.4k</span>
                     </div>
                   </div>
-                  <div class="comment"> <!-- comment 3 -->
+                  <div class="comment">
                     <img class="avatar" src="assets/jane-bourne.png" />
                     <div class="texts">
                       <div class="name-section">
@@ -123,7 +123,7 @@
                       <span class="text-gray">1.4k</span>
                     </div>
                   </div>
-                  <div class="comment our"> <!-- comment 4 -->
+                  <div class="comment our">
                     <img class="avatar" src="assets/our-own-cafe.png" />
                     <div class="texts">
                       <div class="name-section">
@@ -140,15 +140,44 @@
                   </div>
                 </div>
               </div>
+              <div class="messages">
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>Hi, are there non-vegetarian items?</p>
+                </div>
+                <div class="message mine">
+                  <p>Yes we do have non-vegetarian items.</p>
+                </div>
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>What are the chicken items? What are its prices?</p>
+                </div>
+                <div class="message mine">
+                  <p>We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65 Boneless (₹270).</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div> <!-- hero left -->
+      </section> <!-- hero -->
+     
+      <!-- <section class="relative -top-[500px] z-0 px-16">
+        <img src="assets/solar-system.png" />
+      </section> -->
+
+      <section class="demo">
+        <div class="title">
+          <h3 class="heading-text">Turn your viewers into customers</h3>
+          <p class="text-gray text-lg mb-5">Cast a spell on your viewers and turn them into your valuable customers</p>
+          <div class="main-btn"><i class="fa fa-star"></i>Signup for beta</div>
         </div>
       </section>
-     
     </main>
 
     <footer>
       
     </footer>
+    <script src="script/tabs.js"></script>
   </body>
+
 </html>
