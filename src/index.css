@@ -4,26 +4,72 @@
 
 @layer base {
   html {
-    font-family: "Exo 2", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
   }
 }
 
 body {
-  @apply text-zinc-700;
+  @apply text-white min-h-screen;
+  background-color: #000000;
+  background-image: linear-gradient(
+      45deg,
+      rgba(30, 30, 32, 0.8) 0%,
+      rgba(14, 14, 17, 0.8) 32%
+    ),
+    url("assets/bg-stars.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
 }
 
-.button {
-  @apply border-2 border-black p-2 md:px-4 bg-black text-white font-medium hover:bg-gray-700 transition-colors duration-300 motion-reduce:transition-none motion-reduce:hover:bg-black rounded uppercase;
+header {
+  @apply flex items-center h-18 justify-between px-10;
 }
 
-.button.xl {
-  @apply px-8 lg:px-14 py-6 text-2xl;
+nav {
+  @apply flex items-center h-12 rounded-full p-1;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px rgba(255, 255, 255, 0.08) solid;
 }
 
-.button.lg {
-  @apply px-6 lg:px-10 py-4 text-xl;
+nav a.link {
+  @apply flex items-center h-full rounded-full px-4 transition-colors;
 }
 
-.social-link {
-  @apply px-3 py-2 text-xl;
+nav a.link:hover {
+  background-color: #171719;
+}
+nav a.link.active {
+  background-color: #171719;
+}
+nav a.link.active:hover {
+  background-color: #0e0e10;
+}
+
+header a.link.btn {
+  @apply flex items-center h-12 rounded-full px-6 transition-colors;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px rgba(255, 255, 255, 0.08) solid;
+}
+
+header a.link.btn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.text-gray {
+  color: #bdbdc0;
+}
+
+.main-btn {
+  @apply flex gap-x-3 px-8 py-2 rounded-full items-center border-2 w-fit transition-all text-lg font-light;
+  border-color: rgba(255, 255, 255, 0.08);
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.main-btn i {
+  @apply text-2xl;
+}
+
+.main-btn:hover {
+  background-color: #171719;
 }
