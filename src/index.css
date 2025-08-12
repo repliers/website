@@ -34,7 +34,7 @@ body {
 }
 
 header {
-  @apply flex items-center h-18 justify-between px-10;
+  @apply flex items-center h-18 justify-between px-4 lg:px-10;
 }
 
 nav {
@@ -49,6 +49,10 @@ nav a.link {
   @apply flex items-center h-full rounded-full px-4 transition-colors;
 }
 
+nav a.link.hide {
+  @apply hidden lg:flex;
+}
+
 nav a.link:hover,
 nav a.link.active {
   background-color: var(--dark);
@@ -60,7 +64,7 @@ nav a.link.active:hover {
 }
 
 header a.link.btn {
-  @apply flex items-center h-12 rounded-full px-6 transition-colors;
+  @apply hidden lg:flex items-center h-12 rounded-full px-6 transition-colors;
   background-color: var(--dark);
   border: 1px var(--dark) solid;
   color: var(--dark-foreground);

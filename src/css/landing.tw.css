@@ -1,5 +1,6 @@
+/* px-20 pt-40 */
 .hero {
-  @apply w-full flex gap-x-20 py-20 px-20 pt-40 relative justify-around;
+  @apply w-full flex gap-20 py-20 relative justify-around flex-col items-center px-4 pt-24 text-center lg:text-left lg:items-start lg:px-20 lg:pt-40 lg:flex-row;
   background: url("/assets/solar-system.png");
   background-position: 600px;
   background-attachment: fixed;
@@ -17,14 +18,13 @@
 }
 
 .heading-text {
+  @apply text-5xl lg:text-7xl;
   background: linear-gradient(45deg, rgb(0, 0, 0), rgba(16, 16, 16, 0.43));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  font-size: 75px;
   font-weight: bold;
-  line-height: 85px;
 }
 
 .glass {
@@ -56,7 +56,7 @@
 }
 
 .main-section {
-  @apply flex-1 w-full;
+  @apply flex-1 w-full text-left;
 }
 
 .main-section div {
@@ -100,17 +100,18 @@
 
 .comments .comment .now {
   @apply text-xs;
-  color: #bdbdc0;
+  color: var(--text-muted);
 }
 
+.comments .comment .now,
 .comments .comment .reply {
   @apply text-xs;
-  color: #bdbdc0;
+  color: var(--text-muted);
 }
 
 .comments .comment .heart-section {
   @apply flex flex-col items-center text-xs;
-  color: #bdbdc0;
+  color: var(--text-muted);
 }
 .comments .comment .heart-section i {
   @apply text-2xl;
@@ -145,7 +146,7 @@
 }
 
 .demo {
-  @apply flex flex-col py-20 px-20 items-center;
+  @apply flex flex-col py-20 px-4 lg:px-20 items-center;
 }
 
 .demo > .title {
@@ -153,7 +154,7 @@
 }
 
 .demo-card {
-  @apply rounded-xl border relative flex mt-14 max-w-screen-lg;
+  @apply rounded-xl border relative flex mt-14 max-w-screen-lg flex-col lg:flex-row;
   background-color: var(--dark-alpha);
   border: 1px var(--dark-alpha) solid;
 }
@@ -165,7 +166,7 @@
   border: 1px var(--dark-alpha) solid;
 }
 .demo-card .demo-nav .demo-nav-link {
-  @apply max-w-64 rounded-full h-10 transition-colors flex-1 flex gap-x-2 items-center justify-center;
+  @apply max-w-64 rounded-full h-10 transition-colors flex-1 flex gap-x-2 items-center justify-center text-xs md:text-base px-2;
 }
 
 .demo-card .demo-nav .demo-nav-link:hover,
@@ -199,8 +200,13 @@
   background-color: var(--dark);
   color: var(--dark-foreground);
 }
-.demo-card .left .gradient-button {
-  @apply mx-auto px-7 py-4 rounded-full flex gap-x-2 items-center text-lg text-white font-semibold mt-6 transition-all;
+
+.demo-card .left .sign-up {
+  @apply mx-auto px-7 py-4 rounded-full flex gap-x-2 items-center text-lg font-semibold mt-6 w-fit;
+}
+
+.gradient-button {
+  @apply text-white transition-all;
   background: linear-gradient(90deg, #6601ff, #ff00b2);
   background-size: 200% 200%;
   border: 1px var(--dark-alpha) solid;
@@ -220,7 +226,7 @@
 }
 
 .demo-card .right {
-  @apply px-2 py-4 pt-18 flex items-center justify-center;
+  @apply px-2 py-4 pt-4 lg:pt-18 flex items-center justify-center;
   flex: 1;
 }
 .demo-card .right .messages {

@@ -50,12 +50,13 @@
   <main>
     <section class="hero">
         <header class="fixed w-full z-10 top-0">
-          <a href="/"><img src="logo-banner.png" class="w-40" /></a>
+          <a href="/" class="lg:hidden size-8"><img src="assets/logo-black.png" class="w-40" /></a>
+          <a href="/" class="hidden lg:block"><img src="logo-banner.png" class="w-40" /></a>
           <nav>
-            <a href="/" class="link">Home</a>
-            <a href="/" class="link">About Us</a>
-            <a href="/" class="link">Pricing</a>
-            <a href="/" class="link">Contact</a>
+            <a href="/" class="link hide">Home</a>
+            <!-- <a href="/" class="link hide">About Us</a>
+            <a href="/" class="link">Pricing</a> -->
+            <a href="/#contact" class="link">Contact</a>
             <a href="https://dash.takomodo.com" class="link active">Login</a>
           </nav>
           <a href="https://dash.takomodo.com" class="link btn">Login</a>
@@ -63,7 +64,7 @@
         <div class="left">
           <h2 class="heading-text">Manage your socials with AI</h2>
           <p class="text-gray text-lg mb-5">Streamline your social media management with intelligent moderation and audience engagement - all in one platform.</p>
-          <button class="main-btn"><i class="fa fa-user-plus"></i>Signup for beta</button>
+          <a href="https://dash.takomodo.com/register" class="main-btn mx-auto lg:mx-0 gradient-button"><i class="fa fa-user-plus"></i>Signup for beta</a>
         </div>
         <div class="right">
 
@@ -170,7 +171,7 @@
         <div class="title">
           <h3 class="heading-text">Turn your viewers into customers</h3>
           <p class="text-gray text-lg mb-5">Cast a spell on your viewers and turn them into your valuable customers</p>
-          <div class="main-btn"><i class="fa fa-star"></i>Signup for beta</div>
+          <a href="https://dash.takomodo.com/register" class="main-btn"><i class="fa fa-star"></i>Signup for beta</a>
         </div>
 
         <div class="demo-card">
@@ -189,7 +190,7 @@
               <button class="demo-button">Open timings</button>
               <button class="demo-button">General query</button>
             </div>
-            <button class="gradient-button"><i class="fa fa-circle-plus"></i>Signup for beta</button>
+            <a href="https://dash.takomodo.com/register" class="sign-up inline-block"><i class="fa fa-circle-plus"></i>Join for free</a>
           </div>
           <div class="right topography">
             <div class="messages">
@@ -211,6 +212,14 @@
           </div>
         </div>
       </section>
+
+      <section class="contact px-4 lg:px-20" id="contact">
+        <div class="bg-zinc-800 text-white max-w-screen-xl rounded-xl px-5 lg:px-20 py-5 lg:py-10 mb-20 topography mx-auto">
+          <h3 class="mb-2 text-2xl font-bold">Contact Us</h3>
+          <p class="mb-5 text-zinc-400">Here are the details on how to contact us. We always love to hear from you!</p>
+          <a href="mailto:contact@takomodo.com" class="flex gap-x-2 items-center underline"><i class="fa fa-envelope"></i>contact@takomodo.com</a>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -218,7 +227,7 @@
         <div class="left">
           <img src="logo-banner.png" class="invert" />
           <p class="text-xs text-wrap max-w-48">Papemi Technologies LLP, XXXII/900A, Kudilil H, S Kly, Changampuzha Nagar, Kerala - 682033</p>
-          <a href="" class="beta-btn">Join the beta</a>
+          <a href="https://dash.takomodo.com/register" class="beta-btn">Join the beta</a>
         </div>
         <div class="middle">
           <h5 class="">Pages</h5>

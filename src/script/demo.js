@@ -468,7 +468,6 @@ function updateContent(label) {
 }
 
 function loadMessages(messages, userImage) {
-  console.log(messages, userImage);
   const msgContainer = document.querySelector(".demo-card .messages");
   msgContainer.innerHTML = ""; // Clear previous messages
 
