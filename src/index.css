@@ -4,26 +4,93 @@
 
 @layer base {
   html {
-    font-family: "Exo 2", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
   }
 }
 
+:root {
+  --background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 1) 32%
+  );
+  --text-color: #000000;
+  --text-muted: #666;
+  --dark: #323232;
+  --dark-hover: #0e0e10;
+  --dark-foreground: #ffffff;
+  --dark-hover-foreground: #ffffff;
+  --dark-alpha: rgba(0, 0, 0, 0.08);
+}
+
 body {
-  @apply text-zinc-700;
+  @apply text-white min-h-screen;
+  color: var(--text-color);
+  background-color: #ffffff;
+  /* background-image: var(--background), url("assets/bg-stars.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto; */
 }
 
-.button {
-  @apply border-2 border-black p-2 md:px-4 bg-black text-white font-medium hover:bg-gray-700 transition-colors duration-300 motion-reduce:transition-none motion-reduce:hover:bg-black rounded uppercase;
+header {
+  @apply flex items-center h-18 justify-between px-4 lg:px-10;
 }
 
-.button.xl {
-  @apply px-8 lg:px-14 py-6 text-2xl;
+nav {
+  @apply flex items-center h-12 rounded-full p-1 gap-x-1;
+  background-color: rgba(210, 210, 210, 0.3);
+  border: 1px var(--dark-alpha) solid;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.button.lg {
-  @apply px-6 lg:px-10 py-4 text-xl;
+nav a.link {
+  @apply flex items-center h-full rounded-full px-4 transition-colors;
 }
 
-.social-link {
-  @apply px-3 py-2 text-xl;
+nav a.link.hide {
+  @apply hidden lg:flex;
+}
+
+nav a.link:hover,
+nav a.link.active {
+  background-color: var(--dark);
+  color: var(--dark-foreground);
+}
+nav a.link.active:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
+}
+
+header a.link.btn {
+  @apply hidden lg:flex items-center h-12 rounded-full px-6 transition-colors;
+  background-color: var(--dark);
+  border: 1px var(--dark) solid;
+  color: var(--dark-foreground);
+}
+
+header a.link.btn:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
+}
+
+.text-gray {
+  color: var(--text-muted);
+}
+
+.main-btn {
+  @apply flex gap-x-3 px-8 py-2 rounded-full items-center border-2 w-fit transition-all text-lg font-light;
+  border-color: var(--dark);
+  font-weight: 500;
+  background-color: var(--dark);
+  color: var(--dark-foreground);
+}
+.main-btn i {
+  @apply text-2xl;
+}
+
+.main-btn:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
 }

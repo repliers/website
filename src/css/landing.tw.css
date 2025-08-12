@@ -1,86 +1,305 @@
-.banner {
-  @apply flex flex-col lg:flex-row gap-x-10 gap-y-20 px-5 py-16 2xl:py-32 items-center justify-center;
+/* px-20 pt-40 */
+.hero {
+  @apply w-full flex gap-20 py-20 relative justify-around flex-col items-center px-4 pt-24 text-center lg:text-left lg:items-start lg:px-20 lg:pt-40 lg:flex-row;
+  background: url("/assets/solar-system.png");
+  background-position: 600px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
 }
 
-.banner .description {
-  @apply text-center max-w-screen-sm xl:max-w-screen-md text-lg md:text-xl;
+.hero .left {
+  @apply flex flex-col gap-y-5 justify-center max-w-2xl;
 }
 
-.banner .description h2 {
-  @apply text-3xl md:text-4xl text-black font-extrabold pb-5 font-display;
+.hero .right {
+  @apply flex-1 max-w-xl w-full;
 }
 
-.banner .illustration {
-  @apply w-60 md:w-96 lg:w-3/6 lg:max-w-screen-sm;
+.heading-text {
+  @apply text-5xl lg:text-7xl;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgba(16, 16, 16, 0.43));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 
-.feature {
-  @apply flex flex-col lg:flex-row justify-center px-5 py-20 2xl:py-32 gap-x-16 xl:gap-x-72 gap-y-20 text-zinc-700 items-center bg-gradient-to-tr from-white to-zinc-200;
+.glass {
+  @apply flex items-center justify-center w-full flex-1 flex-col p-5 rounded-xl gap-y-2;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.feature .description {
-  @apply max-w-2xl text-center;
+.hero .tabs {
+  @apply h-12 rounded-full flex items-center w-full p-1 gap-x-1 mb-2;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
 }
 
-.feature .description .points {
-  @apply pt-10 flex flex-col items-start gap-y-3 w-fit mx-auto;
+.hero .tabs .tab-selector {
+  @apply flex h-full rounded-full items-center justify-center px-4 transition-colors w-full gap-x-2;
+}
+.hero .tabs .tab-selector.active,
+.hero .tabs .tab-selector:hover {
+  background-color: var(--dark);
+  color: var(--dark-foreground);
 }
 
-.feature .description h3 {
-  @apply text-3xl font-bold pb-8 text-black font-display;
+.hero .tabs .tab-selector.active:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
 }
 
-.feature .illustration {
-  @apply min-w-60 w-full max-w-96;
+.main-section {
+  @apply flex-1 w-full text-left;
 }
 
-.feature.reverse {
-  @apply lg:flex-row-reverse bg-gradient-to-tr from-black to-zinc-800 text-zinc-300;
+.main-section div {
+  @apply relative opacity-100;
 }
 
-.feature.reverse .description h3 {
+.main-section div.active {
+  @apply absolute opacity-0;
+}
+
+.main-section .comments {
+  @apply rounded-lg w-full flex-1;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.comments .comment {
+  @apply flex px-4 gap-x-2 py-2;
+}
+
+.comments .comment.our {
+  @apply ml-8;
+}
+
+.comments .comment .avatar {
+  @apply size-12 rounded-full;
+  background-size: cover;
+}
+
+.comments .comment .texts {
+  @apply flex flex-col w-full;
+}
+.comments .comment .name-section {
+  @apply flex gap-x-2 items-baseline;
+}
+
+.comments .comment .name {
+  @apply text-lg font-semibold;
+}
+
+.comments .comment .now {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.comments .comment .now,
+.comments .comment .reply {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.comments .comment .heart-section {
+  @apply flex flex-col items-center text-xs;
+  color: var(--text-muted);
+}
+.comments .comment .heart-section i {
+  @apply text-2xl;
+}
+
+.comments .comment .tag {
+  @apply text-blue-500;
+}
+
+.demo .messages .message,
+.main-section .messages .message {
+  @apply flex gap-x-2 items-center my-4;
+}
+.demo .messages .message img,
+.main-section .messages .message img {
+  @apply size-8;
+}
+.demo .messages .message p,
+.main-section .messages .message p {
+  @apply px-4 py-2 rounded-lg rounded-bl-none max-w-sm;
+  background-color: rgb(227, 227, 227);
+}
+
+.demo .messages .message.mine,
+.main-section .messages .message.mine {
+  @apply justify-end;
+}
+.demo .messages .message.mine p,
+.main-section .messages .message.mine p {
+  @apply rounded-bl-lg rounded-br-none text-white;
+  background: linear-gradient(90deg, #7342ff, #9047de);
+}
+
+.demo {
+  @apply flex flex-col py-20 px-4 lg:px-20 items-center;
+}
+
+.demo > .title {
+  @apply flex flex-col max-w-2xl text-center gap-y-5 items-center;
+}
+
+.demo-card {
+  @apply rounded-xl border relative flex mt-14 max-w-screen-lg flex-col lg:flex-row;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
+}
+
+.demo-card .demo-nav {
+  @apply absolute h-14 top-2 rounded-full left-2 px-2 flex gap-x-1 justify-around items-center overflow-x-auto overflow-y-hidden;
+  width: calc(100% - 1rem);
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
+}
+.demo-card .demo-nav .demo-nav-link {
+  @apply max-w-64 rounded-full h-10 transition-colors flex-1 flex gap-x-2 items-center justify-center text-xs md:text-base px-2;
+}
+
+.demo-card .demo-nav .demo-nav-link:hover,
+.demo-card .demo-nav .demo-nav-link.active {
+  background-color: var(--dark);
+  color: var(--dark-foreground);
+}
+.demo-card .demo-nav .demo-nav-link.active:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-hover-foreground);
+}
+
+.demo-card .left {
+  @apply px-5 pt-18 pb-10;
+  flex: 1;
+}
+.demo-card .left .title {
+  @apply text-2xl mb-4 mt-6 flex gap-x-2 items-center font-medium;
+}
+.demo-card .left .demo-buttons {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 py-10;
+}
+.demo-card .left .demo-button {
+  @apply px-4 py-2 rounded-full transition-colors;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
+}
+
+.demo-card .left .demo-button.active,
+.demo-card .left .demo-button:hover {
+  background-color: var(--dark);
+  color: var(--dark-foreground);
+}
+
+.demo-card .left .sign-up {
+  @apply mx-auto px-7 py-4 rounded-full flex gap-x-2 items-center text-lg font-semibold mt-6 w-fit;
+}
+
+.gradient-button {
+  @apply text-white transition-all;
+  background: linear-gradient(90deg, #6601ff, #ff00b2);
+  background-size: 200% 200%;
+  border: 1px var(--dark-alpha) solid;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.demo-card .right {
+  @apply px-2 py-4 pt-4 lg:pt-18 flex items-center justify-center;
+  flex: 1;
+}
+.demo-card .right .messages {
+  @apply max-w-lg w-full px-4 py-5 rounded-xl h-96 overflow-auto;
+  background-color: var(--dark-alpha);
+  border: 1px var(--dark-alpha) solid;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+footer {
+  @apply bg-black py-4 text-sm;
+  color: var(--text-muted);
+}
+
+footer .top {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 px-4 pb-10 md:pl-10 pt-6;
+}
+footer .top a {
+  @apply transition-colors text-center;
+}
+footer .top a:hover {
   @apply text-white;
 }
 
-.feature.reverse .description {
-  @apply font-light;
+footer .top h5 {
+  @apply text-base font-medium text-white mb-2;
+}
+footer .top .left {
+  @apply flex flex-col items-center text-center col-span-2 md:col-span-1 md:items-start md:text-left gap-4;
+}
+footer .top .left img {
+  @apply w-32;
+}
+footer .top .left .beta-btn {
+  @apply px-4 py-2 rounded-full flex gap-x-2 items-center text-white font-semibold transition-all;
+  background: linear-gradient(90deg, #6601ff, #ff00b2);
+  background-size: 200% 200%;
+  border: 1px var(--dark-alpha) solid;
+  animation: gradientMove 5s ease infinite;
 }
 
-.pricing {
-  @apply flex flex-col items-center justify-center px-5 py-10;
+footer .top .middle {
+  @apply flex flex-col items-center gap-2 md:items-start;
 }
 
-.pricing h3 {
-  @apply text-5xl font-extrabold py-10 text-black;
+footer .top .right {
+  @apply flex flex-col items-center gap-2 md:items-start;
 }
 
-.pricing p {
-  @apply text-lg mb-3 text-center;
+footer .bottom {
+  @apply grid grid-cols-1 px-10 gap-y-5 justify-center items-center text-center md:grid-cols-3 gap-x-5;
 }
 
-.pricing .price {
-  @apply text-7xl font-black text-black py-8 pb-8 leading-none font-display;
+footer .bottom .social-link {
+  @apply px-2 py-1 transition-colors text-xl md:text-base xl:text-xl;
 }
-.pricing .price-cards {
-  @apply flex gap-4 py-5 flex-col lg:flex-row;
-}
-
-.pricing .price-cards .price-card {
-  @apply bg-black text-white py-8 px-12 font-display flex flex-col items-center;
+footer .bottom .social-link:hover {
+  @apply text-white;
 }
 
-.pricing .price-extra {
-  @apply text-2xl md:text-3xl text-zinc-600 font-bold font-display;
+.fade-in {
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
 }
 
-.contact {
-  @apply flex flex-col lg:flex-row items-center bg-black text-zinc-300 max-w-screen-2xl bg-gradient-to-tr from-black to-zinc-600 rounded-lg px-10 py-10 gap-y-10  gap-x-4 my-24 mx-5 2xl:mx-auto font-light;
-}
-
-.contact h3 {
-  @apply text-2xl font-extrabold py-4 text-white font-display;
-}
-
-.contact .illustration {
-  @apply min-w-60;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

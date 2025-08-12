@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Takomodo - Moderate all your socials with the help of AI</title>
     <link rel="icon" type="image/png" href="/assets/logo.png" />
     <link href="/index.css" rel="stylesheet" />
+    <link href="/css/topography.css" rel="stylesheet" />
     <link href="/css/landing.tw.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -47,267 +45,198 @@
     <meta name="og:locale" content="en_US" />
     <meta name="language" content="English" />
   </head>
-  <body>
-    <div class=""></div>
-    <header class="h-16 md:h-18 flex justify-center">
-      <div class="flex items-center w-full max-w-screen-2xl px-2 lg:px-4">
-        <a href="/" class="flex gap-1 sm:gap-2 items-center">
-          <img
-            alt="Octopus moderator"
-            src="/assets/logo.png"
-            class="w-9 h-9 sm:w-12 sm:h-12 md:w-16 md:h-16"
-          />
-          <h1 class="text-2xl md:text-3xl font-extrabold text-black font-mono">
-            Takomodo
-          </h1>
-        </a>
-        <nav class="flex justify-end flex-1 h-full items-center">
-          <a href="/#pricing" class="p-1.5 sm:p-2 md:p-3">Pricing</a>
-          <a href="/#about-us" class="p-1.5 sm:p-2 md:p-3">About Us</a>
-          <a href="https://dash.takomodo.com" class="button md:ml-4 ml-2"
-            >Dashboard</a
-          >
-        </nav>
-      </div>
-    </header>
+  <body></body>
+  
+  <main>
+    <section class="hero">
+        <header class="fixed w-full z-10 top-0">
+          <a href="/" class="lg:hidden size-8"><img src="assets/logo-black.png" class="w-40" /></a>
+          <a href="/" class="hidden lg:block"><img src="logo-banner.png" class="w-40" /></a>
+          <nav>
+            <a href="/" class="link hide">Home</a>
+            <!-- <a href="/" class="link hide">About Us</a>
+            <a href="/" class="link">Pricing</a> -->
+            <a href="/#contact" class="link">Contact</a>
+            <a href="https://dash.takomodo.com" class="link active">Login</a>
+          </nav>
+          <a href="https://dash.takomodo.com" class="link btn">Login</a>
+        </header>
+        <div class="left">
+          <h2 class="heading-text">Manage your socials with AI</h2>
+          <p class="text-gray text-lg mb-5">Streamline your social media management with intelligent moderation and audience engagement - all in one platform.</p>
+          <a href="https://dash.takomodo.com/register" class="main-btn mx-auto lg:mx-0 gradient-button"><i class="fa fa-user-plus"></i>Signup for beta</a>
+        </div>
+        <div class="right">
 
-    <main>
-      <section class="banner">
-        <div class="description">
-          <h2>AI-Driven Social Media Automation for Smarter Engagement</h2>
-          <span
-            >Streamline your social media management with intelligent
-            moderation, content creation, and audience engagement - all in one
-            platform.</span
-          >
-
-          <div class="flex gap-2 mb-14">
-            <span></span>
-          </div>
-          <a href="https://dash.takomodo.com/register" class="button lg"
-            >Get Started Free</a
-          >
-        </div>
-        <div class="illustration">
-          <img
-            src="/assets/undraw_social_influencer_re_beim.svg"
-            alt="Social media automation illustration"
-          />
-        </div>
-      </section>
-
-      <section class="feature reverse">
-        <div class="description">
-          <h3>AI-Powered Content Creation</h3>
-          <span>
-            Transform simple prompts into engaging social media posts in
-            seconds. Choose from our professional templates, customize with our
-            intuitive editor, and schedule or publish instantly across all your
-            social platforms. Perfect for maintaining a consistent content
-            calendar without the creative struggle.
-          </span>
-          <ul class="points">
-            <li>✨ Instant Post Generation</li>
-            <li>🖼️ Professional Templates Available</li>
-            <li>✏️ Intuitive Editing Tools</li>
-            <li>📅 Flexible Scheduling Options</li>
-          </ul>
-        </div>
-        <div class="illustration">
-          <img
-            src="/assets/undraw_content_creator_re_pt5b.svg"
-            alt="Content creation illustration"
-          />
-        </div>
-      </section>
-
-      <section class="feature">
-        <div class="description">
-          <h3>Smart Comment Management</h3>
-          <span>
-            Say goodbye to overwhelming comment sections. Takomodo's AI
-            automatically engages with your audience through intelligent replies
-            or customized response templates. Boost your engagement rates while
-            saving hours of manual interaction time - let AI handle the
-            conversation while you focus on creating great content.
-          </span>
-          <ul class="points">
-            <li>🤖 AI-Driven Engagement</li>
-            <li>🗨️ Intelligent Replies Automatically</li>
-            <li>✉️ Customized Response Templates</li>
-            <li>⏱️ Save Hours of Interaction Time</li>
-          </ul>
-        </div>
-        <div class="illustration">
-          <img
-            src="/assets/undraw_annotation_re_h774.svg"
-            alt="Comment management illustration"
-          />
-        </div>
-      </section>
-
-      <section class="feature reverse">
-        <div class="description">
-          <h3>Custom Template Builder</h3>
-          <span>
-            Keep your brand consistent with Takomodo's powerful template editor.
-            Create and save your custom templates once, then let AI adapt them
-            for endless content variations. Our intuitive editor makes it easy
-            to maintain your brand's visual identity across all posts while
-            leveraging AI for creative content generation.
-          </span>
-          <ul class="points">
-            <li>🎨 Powerful Template Editor</li>
-            <li>🛠️ Create and Save Custom Templates</li>
-            <li>📏 Consistent Brand Visual Identity</li>
-          </ul>
-        </div>
-        <div class="illustration">
-          <img
-            src="/assets/undraw_image_viewer_re_7ejc.svg"
-            alt="Template builder illustration"
-          />
-        </div>
-      </section>
-
-      <section class="pricing" id="pricing">
-        <h3>Pricing</h3>
-        <p>
-          We work on a token basis (like all the cool AI apps out there). So you
-          will be charged only according to your usage. Tokens do not ever
-          expire!
-        </p>
-
-        <div class="price-cards">
-          <div class="price-card">
-            <div class="flex flex-col font-bold items-center">
-              <span class="text-4xl font-display">1,00,000</span>
-              <span class="font-medium text-gray-300">tokens</span>
+          <div class="glass">
+            <div class="tabs">
+              <button class="tab-selector messages-tab active"><i class="fa-regular fa-message"></i>Messages</button>
+              <button class="tab-selector comments-tab"><i class="fa-regular fa-comment"></i>Comments</button>
             </div>
-            <span class="text-sm mt-8 text-gray-300">initially</span>
-            <span class="text-4xl font-medium">Free</span>
-          </div>
-          <div class="price-card">
-            <div class="flex flex-col font-bold items-center">
-              <span class="text-4xl font-display">5,00,000</span>
-              <span class="font-medium text-gray-300">tokens</span>
+            <div class="main-section">
+              <div class="comments active">
+                <div class="flex flex-col items-center border-b border-gray-200 py-4">
+                  <div class="bg-gray-200 w-48 h-2 rounded-full mb-3"></div>
+                  <span>Comments</span>
+                </div>
+                <div class="flex flex-col py-4">
+                  <div class="comment">
+                    <img class="avatar" src="assets/john-adams.png" />
+                    <div class="texts">
+                      <div class="name-section">
+                        <span class="name">John Adams</span>
+                        <span class="now">Now</span>
+                      </div>
+                      <span class="">Wow! this is wonderful, where can I get it?</span>
+                      <span class="reply">Reply</span>
+                    </div>
+                    <div class="heart-section">
+                      <i class="fa fa-regular fa-heart"></i>
+                      <span class="text-gray">1.4k</span>
+                    </div>
+                  </div>
+                  <div class="comment our">
+                    <img class="avatar" src="assets/our-own-cafe.png" />
+                    <div class="texts">
+                      <div class="name-section">
+                        <span class="name">Our Own Cafe</span>
+                        <span class="now">Now</span>
+                      </div>
+                      <span class=""><span class="tag">@John Adams</span> We have DMed you the details</span>
+                      <span class="reply">Reply</span>
+                    </div>
+                    <div class="heart-section">
+                      <i class="fa fa-regular fa-heart"></i>
+                      <span class="text-gray">1.4k</span>
+                    </div>
+                  </div>
+                  <div class="comment">
+                    <img class="avatar" src="assets/jane-bourne.png" />
+                    <div class="texts">
+                      <div class="name-section">
+                        <span class="name">Jane Bourne</span>
+                        <span class="now">Now</span>
+                      </div>
+                      <span class="">The cakes look so cool</span>
+                      <span class="reply">Reply</span>
+                    </div>
+                    <div class="heart-section">
+                      <i class="fa fa-regular fa-heart"></i>
+                      <span class="text-gray">1.4k</span>
+                    </div>
+                  </div>
+                  <div class="comment our">
+                    <img class="avatar" src="assets/our-own-cafe.png" />
+                    <div class="texts">
+                      <div class="name-section">
+                        <span class="name">Our own cafe</span>
+                        <span class="now">Now</span>
+                      </div>
+                      <span class=""><span class="tag">@Jane Bourne</span> Your comment made our day</span>
+                      <span class="reply">Reply</span>
+                    </div>
+                    <div class="heart-section">
+                      <i class="fa fa-regular fa-heart"></i>
+                      <span class="text-gray">1.4k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="messages">
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>Hi, are there non-vegetarian items?</p>
+                </div>
+                <div class="message mine">
+                  <p>Yes we do have non-vegetarian items.</p>
+                </div>
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>What are the chicken items? What are its prices?</p>
+                </div>
+                <div class="message mine">
+                  <p>We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65 Boneless (₹270).</p>
+                </div>
+              </div>
             </div>
-            <span class="text-gray-300 mt-8 line-through">&nbsp;</span>
-            <span class="text-4xl">₹299</span>
           </div>
-          <div class="price-card">
-            <div class="flex flex-col font-bold items-center">
-              <span class="text-4xl font-display">10,00,000</span>
-              <span class="font-medium text-gray-300">tokens</span>
+        </div> <!-- hero left -->
+      </section> <!-- hero -->
+     
+      <!-- <section class="relative -top-[500px] z-0 px-16">
+        <img src="assets/solar-system.png" />
+      </section> -->
+
+      <section class="demo">
+        <div class="title">
+          <h3 class="heading-text">Turn your viewers into customers</h3>
+          <p class="text-gray text-lg mb-5">Cast a spell on your viewers and turn them into your valuable customers</p>
+          <a href="https://dash.takomodo.com/register" class="main-btn"><i class="fa fa-star"></i>Signup for beta</a>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-nav">
+            <button class="demo-nav-link restaurant active"><i class="fa fa-bowl-food"></i>Restaurants</button>
+            <button class="demo-nav-link influencer"><i class="fa fa-bullhorn"></i>Influencers</button>
+            <button class="demo-nav-link health"><i class="fa fa-user-doctor"></i>Health professionals</button>
+            <button class="demo-nav-link clothing"><i class="fa fa-shirt"></i>Clothing stores</button>
+          </div>
+          <div class="left">
+            <h4 class="title"><i class="fa fa-bowl-food"></i>Restaurants</h4>
+            <p class="description text-gray">Answer the query about the items, pricing and availability in your restaurant. You will have a 24/7 customer care executive ready to answer all your customers</p>
+            <div class="demo-buttons">
+              <button class="demo-button active">Ask for items</button>
+              <button class="demo-button">Event quotas</button>
+              <button class="demo-button">Open timings</button>
+              <button class="demo-button">General query</button>
             </div>
-            <span class="text-gray-300 mt-8 line-through">₹599</span>
-            <span class="text-4xl">₹499</span>
+            <a href="https://dash.takomodo.com/register" class="sign-up inline-block"><i class="fa fa-circle-plus"></i>Join for free</a>
+          </div>
+          <div class="right topography">
+            <div class="messages">
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>Hi, are there non-vegetarian items?</p>
+                </div>
+                <div class="message mine">
+                  <p>Yes we do have non-vegetarian items.</p>
+                </div>
+                <div class="message">
+                  <img src="assets/jane-bourne.png" class="" />
+                  <p>What are the chicken items? What are its prices?</p>
+                </div>
+                <div class="message mine">
+                  <p>We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65 Boneless (₹270).</p>
+                </div>
+              </div>
           </div>
         </div>
-        <span class="price-extra pb-2"
-          ><a href="mailto:contact@takomodo.com" class="underline"
-            >Contact us</a
-          >
-          for more tokens or custom pricing!</span
-        >
-        <a href="https://dash.takomodo.com/register" class="button xl my-8"
-          >Get started free</a
-        >
       </section>
 
-      <section class="contact">
-        <div class="contact-us">
-          <h3>Help Us Improve</h3>
-          <span>
-            Your feedback shapes Takomodo's future. Whether you've discovered a
-            bug, need a new feature, or want to share your experience, we're all
-            ears. Our team is committed to making Takomodo the best social media
-            tool for your needs.
-          </span>
-          <ul class="mt-6">
-            <li>
-              <a href="mailto:contact@takomodo.com" class="underline"
-                >contact@takomodo.com</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="illustration">
-          <img
-            src="/assets/undraw_phone_call_re_hx6a.svg"
-            alt="Contact illustration"
-          />
+      <section class="contact px-4 lg:px-20" id="contact">
+        <div class="bg-zinc-800 text-white max-w-screen-xl rounded-xl px-5 lg:px-20 py-5 lg:py-10 mb-20 topography mx-auto">
+          <h3 class="mb-2 text-2xl font-bold">Contact Us</h3>
+          <p class="mb-5 text-zinc-400">Here are the details on how to contact us. We always love to hear from you!</p>
+          <a href="mailto:contact@takomodo.com" class="flex gap-x-2 items-center underline"><i class="fa fa-envelope"></i>contact@takomodo.com</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <section class="flex flex-col bg-black text-zinc-300 py-10 px-5">
-        <div
-          class="flex flex-col gap-6 text-center items-center max-w-md mx-auto pb-10"
-        >
-          <a href="/" class="flex gap-2 items-center">
-            <img
-              src="/assets/logo.png"
-              alt="Octopus moderator"
-              class="w-10 h-10"
-            />
-            <span class="text-xl font-extrabold text-white font-mono"
-              >Takomodo</span
-            >
-          </a>
-          <div class="flex">
-            <a
-              class="social-link"
-              href="https://www.facebook.com/profile.php?id=61576940526525"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a class="social-link" href="https://www.instagram.com/takomodo.ai/"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a class="social-link" href="https://x.com/takomodo"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
-            <a
-              class="social-link"
-              href="https://www.linkedin.com/company/takomodo"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a class="social-link" href="https://www.youtube.com/@takomodo"
-              ><i class="fa-brands fa-youtube"></i
-            ></a>
-            <a class="social-link" href="https://www.threads.com/@takomodo.ai"
-              ><i class="fa-brands fa-threads"></i
-            ></a>
-            <a class="social-link" href="https://www.reddit.com/user/takomodo/"
-              ><i class="fa-brands fa-reddit-alien"></i
-            ></a>
-          </div>
-          <p id="about-us" class="text-sm text-zinc-400">
-            Takomodo give ability for users to create posts using AI, schedule
-            and give AI generated reply to comments as a comment reply or as a
-            direct message or delete a comment. Also for messages, you can
-            configure to send an auto reply, like and send a sticker. We
-            currently only support Instagram but more platforms are coming soon.
-          </p>
-          <p class="text-sm text-zinc-400 pt-4">
-            PAPEMI TECHNOLOGIES LLP, XXXII/900A, KUDILIL H, S KLY, KANAYANNUR
-            CHANGAMPUZHA NAGAR, ERNAKULAM, KERALA - 682033
-          </p>
+      <div class="top">
+        <div class="left">
+          <img src="logo-banner.png" class="invert" />
+          <p class="text-xs text-wrap max-w-48">Papemi Technologies LLP, XXXII/900A, Kudilil H, S Kly, Changampuzha Nagar, Kerala - 682033</p>
+          <a href="https://dash.takomodo.com/register" class="beta-btn">Join the beta</a>
         </div>
-        <div class="py-5 mx-auto text-sm text-zinc-400">
-          <p class="flex gap-x-2">
-            Contact<a href="tel:919946624506" class="underline"
-              >+91 99466 24506</a
-            >
-          </p>
-        </div>
-        <div
-          class="grid grid-cols-1 md:grid-cols-6 justify-items-center gap-y-4 text-sm w-full max-w-screen-lg justify-evenly mx-auto pt-10 text-white"
-        >
+        <div class="middle">
+          <h5 class="">Pages</h5>
           <a href="/">Home</a>
-          <a href="/#pricing">Pricing</a>
+          <a href="https://dash.takomodo.com">Login</a>
           <a href="https://dash.takomodo.com/register">Register</a>
+        </div>
+        <div class="right">
+          <h5 class="">Legal</h5>
           <a href="https://dash.takomodo.com/terms-of-service"
             >Terms of Service</a
           >
@@ -316,7 +245,42 @@
             >Cancellation & refund policy</a
           >
         </div>
+      </div>
+      <section class="bottom text-gray">
+
+        <div></div>
+        <p >Papemi Technologies LLP</p>
+         <div class="flex justify-center">
+              <a
+                class="social-link"
+                href="https://www.facebook.com/profile.php?id=61576940526525"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a class="social-link" href="https://www.instagram.com/takomodo.ai/"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a class="social-link" href="https://x.com/takomodo"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/company/takomodo"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a class="social-link" href="https://www.youtube.com/@takomodo"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a class="social-link" href="https://www.threads.com/@takomodo.ai"
+                ><i class="fa-brands fa-threads"></i
+              ></a>
+              <a class="social-link" href="https://www.reddit.com/user/takomodo/"
+                ><i class="fa-brands fa-reddit-alien"></i
+              ></a>
+            </div>
       </section>
     </footer>
+    <script src="script/tabs.js"></script>
+    <script src="script/demo.js"></script>
   </body>
+
 </html>
