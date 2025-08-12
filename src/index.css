@@ -39,8 +39,10 @@ header {
 
 nav {
   @apply flex items-center h-12 rounded-full p-1 gap-x-1;
-  background-color: var(--dark-alpha);
+  background-color: rgba(210, 210, 210, 0.3);
   border: 1px var(--dark-alpha) solid;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 nav a.link {

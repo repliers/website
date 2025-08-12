@@ -1,7 +1,8 @@
 .hero {
-  @apply w-full flex gap-x-20 py-20 px-20 relative justify-around;
+  @apply w-full flex gap-x-20 py-20 px-20 pt-40 relative justify-around;
   background: url("/assets/solar-system.png");
   background-position: 600px;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 5;
@@ -68,7 +69,7 @@
 
 .main-section .comments {
   @apply rounded-lg w-full flex-1;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -130,7 +131,7 @@
 .demo .messages .message p,
 .main-section .messages .message p {
   @apply px-4 py-2 rounded-lg rounded-bl-none max-w-sm;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(227, 227, 227);
 }
 
 .demo .messages .message.mine,
@@ -152,7 +153,7 @@
 }
 
 .demo-card {
-  @apply rounded-xl border relative flex mt-14;
+  @apply rounded-xl border relative flex mt-14 max-w-screen-lg;
   background-color: var(--dark-alpha);
   border: 1px var(--dark-alpha) solid;
 }
@@ -179,7 +180,7 @@
 
 .demo-card .left {
   @apply px-5 pt-18 pb-10;
-  flex: 2;
+  flex: 1;
 }
 .demo-card .left .title {
   @apply text-2xl mb-4 mt-6 flex gap-x-2 items-center font-medium;
@@ -220,7 +221,7 @@
 
 .demo-card .right {
   @apply px-2 py-4 pt-18 flex items-center justify-center;
-  flex: 3;
+  flex: 1;
 }
 .demo-card .right .messages {
   @apply max-w-lg w-full px-4 py-5 rounded-xl h-96 overflow-auto;
@@ -228,4 +229,55 @@
   border: 1px var(--dark-alpha) solid;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
+}
+
+footer {
+  @apply bg-black py-4 text-sm;
+  color: var(--text-muted);
+}
+
+footer .top {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 px-4 pb-10 md:pl-10 pt-6;
+}
+footer .top a {
+  @apply transition-colors text-center;
+}
+footer .top a:hover {
+  @apply text-white;
+}
+
+footer .top h5 {
+  @apply text-base font-medium text-white mb-2;
+}
+footer .top .left {
+  @apply flex flex-col items-center text-center col-span-2 md:col-span-1 md:items-start md:text-left gap-4;
+}
+footer .top .left img {
+  @apply w-32;
+}
+footer .top .left .beta-btn {
+  @apply px-4 py-2 rounded-full flex gap-x-2 items-center text-white font-semibold transition-all;
+  background: linear-gradient(90deg, #6601ff, #ff00b2);
+  background-size: 200% 200%;
+  border: 1px var(--dark-alpha) solid;
+  animation: gradientMove 5s ease infinite;
+}
+
+footer .top .middle {
+  @apply flex flex-col items-center gap-2 md:items-start;
+}
+
+footer .top .right {
+  @apply flex flex-col items-center gap-2 md:items-start;
+}
+
+footer .bottom {
+  @apply grid grid-cols-1 px-10 gap-y-5 justify-center items-center text-center md:grid-cols-3 gap-x-5;
+}
+
+footer .bottom .social-link {
+  @apply px-2 py-1 transition-colors text-xl md:text-base xl:text-xl;
+}
+footer .bottom .social-link:hover {
+  @apply text-white;
 }
