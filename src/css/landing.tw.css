@@ -201,10 +201,6 @@
   color: var(--dark-foreground);
 }
 
-.demo-card .left .sign-up {
-  @apply mx-auto px-7 py-4 rounded-full flex gap-x-2 items-center text-lg font-semibold mt-6 w-fit;
-}
-
 .gradient-button {
   @apply text-white transition-all;
   background: linear-gradient(90deg, #6601ff, #ff00b2);
@@ -237,6 +233,81 @@
   -webkit-backdrop-filter: blur(1px);
 }
 
+.working {
+  @apply flex flex-col items-center text-center max-w-screen-xl mx-auto pt-20 pb-40 px-4 lg:px-20;
+}
+
+.working .cards {
+  @apply grid grid-cols-1 lg:grid-cols-2 text-left gap-4;
+}
+
+.working .card {
+  @apply w-full rounded-xl p-4 lg:p-8 pb-0 text-white h-96 flex flex-col gap-x-3 overflow-hidden shadow-lg;
+  background-color: rgba(19, 19, 19, 0.9);
+  border: 1px rgba(0, 0, 0, 0.9) solid;
+}
+.working .card .title {
+  @apply text-lg font-medium mb-1;
+}
+.working .card .description {
+  @apply text-sm pb-4;
+  color: var(--text-dark-muted);
+}
+.working .card .illustration {
+  @apply relative flex justify-center items-center max-w-full max-h-full flex-1;
+}
+
+.working .card.card-2 .illustration .cog {
+  @apply absolute;
+}
+
+.working .card.card-2 .illustration .cog {
+  @apply absolute;
+}
+.working .card.card-4 .illustration {
+  @apply relative;
+}
+.working .card.card-4 .illustration img {
+  @apply absolute shadow-md;
+}
+.working .card.card-4 .illustration img.img-1 {
+  left: 60%;
+  top: 10%;
+  animation: float 16s ease-in-out infinite;
+}
+.working .card.card-4 .illustration img.img-2 {
+  left: 0%;
+  top: 15%;
+  animation: float 12s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.working .card.card-4 .illustration img.img-3 {
+  left: 50%;
+  top: 70%;
+  animation: float 16s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.working .card.card-4 .illustration img.img-4 {
+  left: -10%;
+  top: 55%;
+  animation: float 14s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.working .card.link-account {
+  background-image: url("/assets/card-1-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.working .card.card-2 {
+  background-image: url("/assets/card-2-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.working .card.card-3 {
+  background-image: url("/assets/card-3-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 footer {
   @apply bg-black py-4 text-sm;
   color: var(--text-muted);
@@ -301,5 +372,49 @@ footer .bottom .social-link:hover {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.rotate {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.space-hover {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  15% {
+    transform: translate(4px, -3px);
+  }
+  30% {
+    transform: translate(-6px, 2px);
+  }
+  45% {
+    transform: translate(3px, 6px);
+  }
+  60% {
+    transform: translate(-5px, -4px);
+  }
+  75% {
+    transform: translate(2px, -6px);
+  }
+  90% {
+    transform: translate(-4px, 3px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
