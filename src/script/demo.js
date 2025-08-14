@@ -394,6 +394,9 @@ window.addEventListener("load", () => {
 
   Object.entries(tabs).forEach(([label, elem]) => {
     elem.addEventListener("click", () => {
+      mixpanel.track("Demo section click", {
+        label,
+      });
       switchLabel(tabs, label);
       updateContent(label);
     });
@@ -455,6 +458,10 @@ function updateContent(label) {
     });
 
     btn.addEventListener("click", () => {
+      mixpanel.track("Demo query click", {
+        label,
+        query: opt.query,
+      });
       document
         .querySelectorAll(".demo-button")
         .forEach((b) => b.classList.remove("active"));

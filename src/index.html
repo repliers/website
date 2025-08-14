@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Takomodo - Moderate all your socials with the help of AI</title>
     <link rel="icon" type="image/png" href="/assets/logo.png" />
     <link href="/index.css" rel="stylesheet" />
@@ -44,38 +47,207 @@
     <meta name="og:site_name" content="Takomodo" />
     <meta name="og:locale" content="en_US" />
     <meta name="language" content="English" />
+
+    <script type="text/javascript">
+      (function (f, b) {
+        if (!b.__SV) {
+          var e, g, i, h;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function (e, f, c) {
+            function g(a, d) {
+              var b = d.split(".");
+              2 == b.length && ((a = a[b[0]]), (d = b[1]));
+              a[d] = function () {
+                a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var a = b;
+            "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel");
+            a.people = a.people || [];
+            a.toString = function (a) {
+              var d = "mixpanel";
+              "mixpanel" !== c && (d += "." + c);
+              a || (d += " (stub)");
+              return d;
+            };
+            a.people.toString = function () {
+              return a.toString(1) + ".people (stub)";
+            };
+            i =
+              "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(
+                " "
+              );
+            for (h = 0; h < i.length; h++) g(a, i[h]);
+            var j = "set set_once union unset remove delete".split(" ");
+            a.get_group = function () {
+              function b(c) {
+                d[c] = function () {
+                  call2_args = arguments;
+                  call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                  a.push([e, call2]);
+                };
+              }
+              for (
+                var d = {},
+                  e = ["get_group"].concat(
+                    Array.prototype.slice.call(arguments, 0)
+                  ),
+                  c = 0;
+                c < j.length;
+                c++
+              )
+                b(j[c]);
+              return d;
+            };
+            b._i.push([e, f, c]);
+          };
+          b.__SV = 1.2;
+          e = f.createElement("script");
+          e.type = "text/javascript";
+          e.async = !0;
+          e.src =
+            "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+              ? MIXPANEL_CUSTOM_LIB_URL
+              : "file:" === f.location.protocol &&
+                "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+              ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
+              : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+          g = f.getElementsByTagName("script")[0];
+          g.parentNode.insertBefore(e, g);
+        }
+      })(document, window.mixpanel || []);
+    </script>
   </head>
-  <body></body>
-  
-  <main>
-    <section class="hero">
+  <body>
+    <script>
+      // Near entry of your product, init Mixpanel
+      mixpanel.init("4ef1b2ce5f7e2e844937a2dea48ac823", {
+        debug: true,
+        track_pageview: true,
+        persistence: "localStorage",
+      });
+
+      function track(name, properties = {}) {
+        mixpanel.track(name, properties);
+      }
+
+      function signupTrack(position) {
+        track("Signup clicked", { buttonSection: position });
+      }
+
+      function toCamelCase(str) {
+        return str
+          .replace(/^data-/, "") // remove leading "data-"
+          .split("-")
+          .map((word, index) =>
+            index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+          )
+          .join("");
+      }
+
+      window.addEventListener("load", () => {
+        const trackLinks = document.querySelectorAll("a.track");
+        trackLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const eventName = link.getAttribute("data-event");
+            const attributes = link
+              .getAttributeNames()
+              .filter((d) => d.indexOf("data-") === 0 && d !== "data-event");
+            const properties = Object.fromEntries(
+              attributes.map((a) => [toCamelCase(a), link.getAttribute(a)])
+            );
+            mixpanel.track(eventName, properties, () => {
+              window.open(link.href, "_blank");
+            });
+          });
+        });
+      });
+    </script>
+    <main>
+      <section class="hero">
         <header class="fixed w-full z-10 top-0">
-          <a href="/" class="lg:hidden size-8"><img src="assets/logo-black.png" class="w-40" /></a>
-          <a href="/" class="hidden lg:block"><img src="logo-banner.png" class="w-40" /></a>
+          <a
+            data-event="Link clicked"
+            data-location="/"
+            data-button-section="nav-logo"
+            href="/"
+            class="lg:hidden size-8 track"
+            ><img src="assets/logo-black.png" class="w-40"
+          /></a>
+          <a
+            href="/"
+            data-event="Link clicked"
+            data-location="/"
+            data-button-section="nav-logo"
+            class="hidden lg:block track"
+            ><img src="logo-banner.png" class="w-40"
+          /></a>
           <nav>
-            <a href="/" class="link hide">Home</a>
+            <a
+              href="/"
+              data-event="Link clicked"
+              data-location="/"
+              data-button-section="nav-link"
+              class="link hide track"
+              >Home</a
+            >
             <!-- <a href="/" class="link hide">About Us</a>
             <a href="/" class="link">Pricing</a> -->
-            <a href="/#contact" class="link">Contact</a>
-            <a href="https://dash.takomodo.com" class="link active">Login</a>
+            <a
+              href="/#contact"
+              data-event="Link clicked"
+              data-location="/#contact"
+              data-button-section="nav-link"
+              class="link track"
+              >Contact</a
+            >
+            <a
+              href="https://dash.takomodo.com"
+              data-event="Login clicked"
+              data-button-section="header-nav-link"
+              class="link active track"
+              >Login</a
+            >
           </nav>
-          <a href="https://dash.takomodo.com" class="link btn">Login</a>
+          <a
+            href="https://dash.takomodo.com"
+            data-event="Login clicked"
+            data-button-section="header-link"
+            class="link btn track"
+            >Login</a
+          >
         </header>
         <div class="left">
           <h2 class="heading-text">Manage your socials with AI</h2>
-          <p class="text-gray text-lg mb-5">Streamline your social media management with intelligent moderation and audience engagement - all in one platform.</p>
-          <a href="https://dash.takomodo.com/register" class="main-btn mx-auto lg:mx-0 gradient-button"><i class="fa fa-user-plus"></i>Signup for beta</a>
+          <p class="text-gray text-lg mb-5">
+            Streamline your social media management with intelligent moderation
+            and audience engagement - all in one platform.
+          </p>
+          <a
+            data-event="Signup clicked"
+            data-button-section="hero-section"
+            href="https://dash.takomodo.com/register"
+            class="main-btn mx-auto lg:mx-0 gradient-button track"
+            ><i class="fa fa-user-plus"></i>Try for free</a
+          >
         </div>
         <div class="right">
-
           <div class="glass">
             <div class="tabs">
-              <button class="tab-selector messages-tab active"><i class="fa-regular fa-message"></i>Messages</button>
-              <button class="tab-selector comments-tab"><i class="fa-regular fa-comment"></i>Comments</button>
+              <button class="tab-selector messages-tab active">
+                <i class="fa-regular fa-message"></i>Messages
+              </button>
+              <button class="tab-selector comments-tab">
+                <i class="fa-regular fa-comment"></i>Comments
+              </button>
             </div>
             <div class="main-section">
               <div class="comments active">
-                <div class="flex flex-col items-center border-b border-gray-200 py-4">
+                <div
+                  class="flex flex-col items-center border-b border-gray-200 py-4"
+                >
                   <div class="bg-gray-200 w-48 h-2 rounded-full mb-3"></div>
                   <span>Comments</span>
                 </div>
@@ -87,7 +259,9 @@
                         <span class="name">John Adams</span>
                         <span class="now">Now</span>
                       </div>
-                      <span class="">Wow! this is wonderful, where can I get it?</span>
+                      <span class=""
+                        >Wow! this is wonderful, where can I get it?</span
+                      >
                       <span class="reply">Reply</span>
                     </div>
                     <div class="heart-section">
@@ -102,7 +276,10 @@
                         <span class="name">Our Own Cafe</span>
                         <span class="now">Now</span>
                       </div>
-                      <span class=""><span class="tag">@John Adams</span> We have DMed you the details</span>
+                      <span class=""
+                        ><span class="tag">@John Adams</span> We have DMed you
+                        the details</span
+                      >
                       <span class="reply">Reply</span>
                     </div>
                     <div class="heart-section">
@@ -132,7 +309,10 @@
                         <span class="name">Our own cafe</span>
                         <span class="now">Now</span>
                       </div>
-                      <span class=""><span class="tag">@Jane Bourne</span> Your comment made our day</span>
+                      <span class=""
+                        ><span class="tag">@Jane Bourne</span> Your comment made
+                        our day</span
+                      >
                       <span class="reply">Reply</span>
                     </div>
                     <div class="heart-section">
@@ -155,14 +335,19 @@
                   <p>What are the chicken items? What are its prices?</p>
                 </div>
                 <div class="message mine">
-                  <p>We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65 Boneless (₹270).</p>
+                  <p>
+                    We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken
+                    65 Boneless (₹270).
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div> <!-- hero left -->
-      </section> <!-- hero -->
-     
+        </div>
+        <!-- hero left -->
+      </section>
+      <!-- hero -->
+
       <!-- <section class="relative -top-[500px] z-0 px-16">
         <img src="assets/solar-system.png" />
       </section> -->
@@ -170,20 +355,41 @@
       <section class="demo">
         <div class="title">
           <h3 class="heading-text">Turn your viewers into customers</h3>
-          <p class="text-gray text-lg mb-5">Cast a spell on your viewers and turn them into your valuable customers</p>
-          <a href="https://dash.takomodo.com/register" class="main-btn"><i class="fa fa-star"></i>Signup for beta</a>
+          <p class="text-gray text-lg mb-5">
+            Cast a spell on your viewers and turn them into your valuable
+            customers
+          </p>
+          <a
+            data-event="Signup clicked"
+            data-button-section="demo-section"
+            href="https://dash.takomodo.com/register"
+            class="main-btn track"
+            ><i class="fa fa-star"></i>Signup for beta</a
+          >
         </div>
 
         <div class="demo-card">
           <div class="demo-nav">
-            <button class="demo-nav-link restaurant active"><i class="fa fa-bowl-food"></i>Restaurants</button>
-            <button class="demo-nav-link influencer"><i class="fa fa-bullhorn"></i>Influencers</button>
-            <button class="demo-nav-link health"><i class="fa fa-user-doctor"></i>Health professionals</button>
-            <button class="demo-nav-link clothing"><i class="fa fa-shirt"></i>Clothing stores</button>
+            <button class="demo-nav-link restaurant active">
+              <i class="fa fa-bowl-food"></i>Restaurants
+            </button>
+            <button class="demo-nav-link influencer">
+              <i class="fa fa-bullhorn"></i>Influencers
+            </button>
+            <button class="demo-nav-link health">
+              <i class="fa fa-user-doctor"></i>Health professionals
+            </button>
+            <button class="demo-nav-link clothing">
+              <i class="fa fa-shirt"></i>Clothing stores
+            </button>
           </div>
           <div class="left">
             <h4 class="title"><i class="fa fa-bowl-food"></i>Restaurants</h4>
-            <p class="description text-gray">Answer the query about the items, pricing and availability in your restaurant. You will have a 24/7 customer care executive ready to answer all your customers</p>
+            <p class="description text-gray">
+              Answer the query about the items, pricing and availability in your
+              restaurant. You will have a 24/7 customer care executive ready to
+              answer all your customers
+            </p>
             <div class="demo-buttons">
               <button class="demo-button active">Ask for items</button>
               <button class="demo-button">Event quotas</button>
@@ -193,21 +399,24 @@
           </div>
           <div class="right topography">
             <div class="messages">
-                <div class="message">
-                  <img src="assets/jane-bourne.png" class="" />
-                  <p>Hi, are there non-vegetarian items?</p>
-                </div>
-                <div class="message mine">
-                  <p>Yes we do have non-vegetarian items.</p>
-                </div>
-                <div class="message">
-                  <img src="assets/jane-bourne.png" class="" />
-                  <p>What are the chicken items? What are its prices?</p>
-                </div>
-                <div class="message mine">
-                  <p>We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65 Boneless (₹270).</p>
-                </div>
+              <div class="message">
+                <img src="assets/jane-bourne.png" class="" />
+                <p>Hi, are there non-vegetarian items?</p>
               </div>
+              <div class="message mine">
+                <p>Yes we do have non-vegetarian items.</p>
+              </div>
+              <div class="message">
+                <img src="assets/jane-bourne.png" class="" />
+                <p>What are the chicken items? What are its prices?</p>
+              </div>
+              <div class="message mine">
+                <p>
+                  We have Chicken 65 (₹240), Chicken 65 Full (₹900), Chicken 65
+                  Boneless (₹270).
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -215,19 +424,29 @@
       <section class="working">
         <div class="title">
           <h3 class="heading-text">How it works?</h3>
-          <p class="text-gray text-lg my-5 mb-10">A quick overview of how you can use Takomodo to answer for you.</p>
+          <p class="text-gray text-lg my-5 mb-10">
+            A quick overview of how you can use Takomodo to answer for you.
+          </p>
         </div>
         <div class="cards">
           <div class="card link-account">
             <div class="title">Link your Instagram account</div>
-            <div class="description">Connect your Instagram account(s) to your Takomodo account. Once connected you will see all the accounts listed. But no replies will be given until you ask us to.</div>
-            <div class="illustration">
+            <div class="description">
+              Connect your Instagram account(s) to your Takomodo account. Once
+              connected you will see all the accounts listed. But no replies
+              will be given until you ask us to.
+            </div>
+            <div class="illustration px-10">
               <img src="./assets/card-1.png" />
             </div>
           </div>
           <div class="card card-2">
             <div class="title">Create a reply configuration</div>
-            <div class="description">Reply configuration is the core feature of Takmoodo. This configuration defines how to reply to a comment or direct message. <!--a href="" class="text-blue-400">Learn about reply configurations.</a--></div>
+            <div class="description">
+              Reply configuration is the core feature of Takmoodo. This
+              configuration defines how to reply to a comment or direct message.
+              <!--a href="" class="text-blue-400">Learn about reply configurations.</a-->
+            </div>
             <div class="illustration">
               <img class="self-end drop-shadow-xl" src="./assets/card-2.svg" />
               <img class="cog rotate" src="./assets/card-2-cog.svg" />
@@ -235,7 +454,10 @@
           </div>
           <div class="card card-3">
             <div class="title">Connect account to configuration</div>
-            <div class="description">Connect the reply configuration to the plarform account and you are good to go.</div>
+            <div class="description">
+              Connect the reply configuration to the plarform account and you
+              are good to go.
+            </div>
             <div class="illustration">
               <!-- <img src="./assets/solar-system.png" /> -->
               <img src="./assets/card-3.svg" />
@@ -243,7 +465,10 @@
           </div>
           <div class="card card-4">
             <div class="title">Learn from your actions</div>
-            <div class="description">Takomodo leverages your replies and learns from them. It becomes smarter the more you use it</div>
+            <div class="description">
+              Takomodo leverages your replies and learns from them. It becomes
+              smarter the more you use it
+            </div>
             <div class="illustration">
               <img class="img-4" src="./assets/floating-dm-2.svg" />
               <img class="img-2" src="./assets/floating-comment-2.svg" />
@@ -252,12 +477,24 @@
             </div>
           </div>
         </div>
-      </section><!-- how it works -->
+      </section>
+      <!-- how it works -->
       <section class="contact px-4 lg:px-20" id="contact">
-        <div class="bg-zinc-800 text-white max-w-screen-xl rounded-xl px-5 lg:px-20 py-5 lg:py-10 mb-20 topography mx-auto">
+        <div
+          class="bg-zinc-800 text-white max-w-screen-xl rounded-xl px-5 lg:px-20 py-5 lg:py-10 mb-20 topography mx-auto"
+        >
           <h3 class="mb-2 text-2xl font-bold">Contact Us</h3>
-          <p class="mb-5 text-zinc-400">Here are the details on how to contact us. We always love to hear from you!</p>
-          <a href="mailto:contact@takomodo.com" class="flex gap-x-2 items-center underline"><i class="fa fa-envelope"></i>contact@takomodo.com</a>
+          <p class="mb-5 text-zinc-400">
+            Here are the details on how to contact us. We always love to hear
+            from you!
+          </p>
+          <a
+            data-event="Contact clicked"
+            data-type="mail"
+            href="mailto:contact@takomodo.com"
+            class="flex gap-x-2 items-center underline track"
+            ><i class="fa fa-envelope"></i>contact@takomodo.com</a
+          >
         </div>
       </section>
     </main>
@@ -266,61 +503,135 @@
       <div class="top">
         <div class="left">
           <img src="logo-banner.png" class="invert" />
-          <p class="text-xs text-wrap max-w-48">Papemi Technologies LLP, XXXII/900A, Kudilil H, S Kly, Changampuzha Nagar, Kerala - 682033</p>
-          <a href="https://dash.takomodo.com/register" class="beta-btn">Join the beta</a>
+          <p class="text-xs text-wrap max-w-48">
+            Papemi Technologies LLP, XXXII/900A, Kudilil H, S Kly, Changampuzha
+            Nagar, Kerala - 682033
+          </p>
+          <a
+            data-event="Signup clicked"
+            data-button-section="footer"
+            href="https://dash.takomodo.com/register"
+            class="beta-btn track"
+            >Join the beta</a
+          >
         </div>
         <div class="middle">
           <h5 class="">Pages</h5>
-          <a href="/">Home</a>
-          <a href="https://dash.takomodo.com">Login</a>
-          <a href="https://dash.takomodo.com/register">Register</a>
+          <a
+            class="track"
+            data-event="Link clicked"
+            data-location="/"
+            data-button-section="footer-link"
+            href="/"
+            >Home</a
+          >
+          <a
+            class="track"
+            data-event="Login clicked"
+            data-button-section="footer-link"
+            href="https://dash.takomodo.com"
+            >Login</a
+          >
+          <a
+            class="track"
+            data-event="Register clicked"
+            data-button-section="footer-link"
+            href="https://dash.takomodo.com/register"
+            >Register</a
+          >
         </div>
         <div class="right">
           <h5 class="">Legal</h5>
-          <a href="https://dash.takomodo.com/terms-of-service"
+          <a
+            class="track"
+            data-event="Link clicked"
+            data-location="terms-of-service"
+            data-button-section="footer-link"
+            href="https://dash.takomodo.com/terms-of-service"
             >Terms of Service</a
           >
-          <a href="https://dash.takomodo.com/privacy-policy">Privacy Policy</a>
-          <a href="https://dash.takomodo.com/cancellation-policy"
+          <a
+            class="track"
+            data-event="Link clicked"
+            data-location="privacy-policy"
+            data-button-section="footer-link"
+            href="https://dash.takomodo.com/privacy-policy"
+            >Privacy Policy</a
+          >
+          <a
+            class="track"
+            data-event="Link clicked"
+            data-location="cancellation-policy"
+            data-button-section="footer-link"
+            href="https://dash.takomodo.com/cancellation-policy"
             >Cancellation & refund policy</a
           >
         </div>
       </div>
       <section class="bottom text-gray">
-
         <div></div>
-        <p >Papemi Technologies LLP</p>
-         <div class="flex justify-center">
-              <a
-                class="social-link"
-                href="https://www.facebook.com/profile.php?id=61576940526525"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a class="social-link" href="https://www.instagram.com/takomodo.ai/"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a class="social-link" href="https://x.com/takomodo"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/company/takomodo"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-              <a class="social-link" href="https://www.youtube.com/@takomodo"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
-              <a class="social-link" href="https://www.threads.com/@takomodo.ai"
-                ><i class="fa-brands fa-threads"></i
-              ></a>
-              <a class="social-link" href="https://www.reddit.com/user/takomodo/"
-                ><i class="fa-brands fa-reddit-alien"></i
-              ></a>
-            </div>
+        <p>Papemi Technologies LLP</p>
+        <div class="flex justify-center">
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="facebook"
+            data-button-section="footer-link"
+            href="https://www.facebook.com/profile.php?id=61576940526525"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="instagram"
+            data-button-section="footer-link"
+            href="https://www.instagram.com/takomodo.ai/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="x"
+            data-button-section="footer-link"
+            href="https://x.com/takomodo"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="linkedin"
+            data-button-section="footer-link"
+            href="https://www.linkedin.com/company/takomodo"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="youtubee"
+            data-button-section="footer-link"
+            href="https://www.youtube.com/@takomodo"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="threads"
+            data-button-section="footer-link"
+            href="https://www.threads.com/@takomodo.ai"
+            ><i class="fa-brands fa-threads"></i
+          ></a>
+          <a
+            class="social-link track"
+            data-event="Social link clicked"
+            data-location="reddit"
+            data-button-section="footer-link"
+            href="https://www.reddit.com/user/takomodo/"
+            ><i class="fa-brands fa-reddit-alien"></i
+          ></a>
+        </div>
       </section>
     </footer>
     <script src="script/tabs.js"></script>
     <script src="script/demo.js"></script>
   </body>
-
 </html>

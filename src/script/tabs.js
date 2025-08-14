@@ -13,6 +13,9 @@ window.addEventListener("load", () => {
   const toggleTo = (page) => {
     const comments = commentTab.querySelectorAll(".comment");
     const messages = messageTab.querySelectorAll(".message");
+    mixpanel.track("headerDemo", {
+      page,
+    });
     if (page === "message") {
       if (messageButton.classList.contains("active")) {
         return;
