@@ -145,25 +145,6 @@
           )
           .join("");
       }
-
-      window.addEventListener("load", () => {
-        const trackLinks = document.querySelectorAll("a.track");
-        trackLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const eventName = link.getAttribute("data-event");
-            const attributes = link
-              .getAttributeNames()
-              .filter((d) => d.indexOf("data-") === 0 && d !== "data-event");
-            const properties = Object.fromEntries(
-              attributes.map((a) => [toCamelCase(a), link.getAttribute(a)])
-            );
-            mixpanel.track(eventName, properties, () => {
-              window.open(link.href, "_blank");
-            });
-          });
-        });
-      });
     </script>
     <main>
       <section class="hero">
@@ -633,5 +614,6 @@
     </footer>
     <script src="script/tabs.js"></script>
     <script src="script/demo.js"></script>
+    <script src="script/global.js"></script>
   </body>
 </html>

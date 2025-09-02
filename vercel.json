@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/register",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}
